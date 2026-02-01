@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoria Verde Internacional</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+
+  <!-- Seletor de idioma -->
+  <div style="text-align:right;margin-bottom:15px;">
+    <select id="idioma" onchange="mudarIdioma()">
+      <option value="pt">PT</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+
+  <!-- Login / Cadastro -->
+  <div id="loginSecao">
+    <h2 id="tituloLogin">Login / Cadastro</h2>
+    <input type="email" id="email" placeholder="Seu e-mail">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="cadastrar()" id="btnCadastrar">Cadastrar</button>
+    <button onclick="login()" id="btnLogin">Entrar</button>
+  </div>
+
+  <!-- Pagamento -->
+  <div id="pagamentoSecao" style="display:none;">
+    <h2 id="tituloPagamento">Pagar R$0,01</h2>
+    <button onclick="pagar()" id="btnPagar">Pagar</button>
+  </div>
+
+  <!-- Formulário de Diagnóstico -->
+  <div id="diagnosticoSecao" style="display:none;">
+    <h2 id="tituloDiagnostico">Formulário de Diagnóstico</h2>
+    <input type="text" id="empresa" placeholder="Nome da empresa">
+    <input type="number" id="energia" placeholder="Consumo de energia (kWh)">
+    <input type="number" id="agua" placeholder="Consumo de água (litros)">
+    <input type="number" id="residuos" placeholder="Resíduos gerados (kg)">
+    <button onclick="gerarDiagnostico()" id="btnGerar">Gerar Diagnóstico</button>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboardSecao" style="display:none;">
+    <h2 id="tituloDashboard">Dashboard</h2>
+    <canvas id="grafico"></canvas>
+
+    <h3 id="tituloDicas">Dicas de Conscientização</h3>
+    <ul id="listaDicas"></ul>
+
+    <h3>Vídeos Educativos</h3>
+    <div id="videosEducativos">
+      <iframe width="300" height="170" src="https://www.youtube.com/embed/1OC1-UHjxkA" title="Como economizar energia" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="170" src="https://www.youtube.com/embed/3-Ekz6D2K8Q" title="Como reduzir consumo de água" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="170" src="https://www.youtube.com/embed/OdPVV0e2vM8" title="Reciclagem e sustentabilidade" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
